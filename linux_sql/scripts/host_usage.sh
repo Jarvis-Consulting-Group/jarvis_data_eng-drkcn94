@@ -27,14 +27,14 @@ disk_available=$(echo "$(df -BM /)" | awk '{print $4}' | sed 's/.$//' | tail -n1
 # Get timestamp
 timestamp=$(vmstat -t | awk '{print $18, $19}' | tail -n1 | xargs)
 
+# Set up env variables for psql cmd
+export PGPASSWORD=$psql_password
+
 # Subquery to find matching id in host_info table
 host_id=$(psql -h "$psql_host" -p "$psql_port" -d "$db_name" -U "$psql_username" -t -c "SELECT id FROM host_info WHERE hostname='$hostname'")
 
 # SQL command to insert server usage data to the host_usage table
 insert_stmt="INSERT INTO host_usage(timestamp, host_id, memory_free, cpu_idle, cpu_kernel, disk_io, disk_available) VALUES('$timestamp', '$host_id', '$memory_free', '$cpu_idle', '$cpu_kernel', '$disk_io', '$disk_available');"
-
-# Set up env variables for psql cmd
-export PGPASSWORD=$psql_password
 
 # Insert data into the database table host_usage
 psql -h "$psql_host" -p "$psql_port" -d "$db_name" -U "$psql_username" -c "$insert_stmt"
