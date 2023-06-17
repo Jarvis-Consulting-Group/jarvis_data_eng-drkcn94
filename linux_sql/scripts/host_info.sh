@@ -13,13 +13,13 @@ if [ "$#" -ne 5 ]; then
 fi
 
 hostname=$(hostname -f)
-lcspu_out=$(lcspu)
+lscpu_out=$(lscpu)
 
-cpu_number=$(echo "$lcspu_out" | awk '/CPU\(s\):/{print $2}' | head -n1 | xargs)
-cpu_architecture=$(echo "$lcspu_out" | awk '/Architecture:/{print $2}' | xargs)
-cpu_model=$(echo "$lcspu_out" | awk '/Model name:/{$1=$2=""; print $0}' | xargs)
-cpu_mhz=$(echo "$lcspu_out" | awk '/CPU MHz:/{print $3}' | xargs)
-l2_cache=$(echo "$lcspu_out" | awk '/L2 cache:/{print $3}' | sed 's/.$//' | xargs)
+cpu_number=$(echo "$lscpu_out" | awk '/CPU\(s\):/{print $2}' | head -n1 | xargs)
+cpu_architecture=$(echo "$lscpu_out" | awk '/Architecture:/{print $2}' | xargs)
+cpu_model=$(echo "$lscpu_out" | awk '/Model name:/{$1=$2=""; print $0}' | xargs)
+cpu_mhz=$(echo "$lscpu_out" | awk '/CPU MHz:/{print $3}' | xargs)
+l2_cache=$(echo "$lscpu_out" | awk '/L2 cache:/{print $3}' | sed 's/.$//' | xargs)
 timestamp=$(echo "$(vmstat -t)" | awk '{print $18, $19}' | tail -n1 | xargs)
 total_mem=$(echo "$(free -m)" | awk '/Mem:/{print $2}' | xargs)
 
