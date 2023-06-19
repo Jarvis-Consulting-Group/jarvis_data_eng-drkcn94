@@ -46,16 +46,29 @@ Design and
 ![Design of how monitoring agents would interact with the Database](./.assets/architecture.png)
 
 ## Scripts
-`psql_docker.sh` was created first so that there is a means of creating a database instance that can be interacted with to store records.
+`psql_docker.sh` was created so that there is a means of creating a database instance that can be interacted with to store records.
 
-`ddl.sql` was created so that there is a means of automated the necessary instructions to create the tables to store the records.
+`host_info.sh` was created using shell scripting language to provide streamline instructions necessary
+for gathering system hardware specifications.
 
-`host_info.sh` and `host_usage.sh` were created last using shell scripting language to provide streamline instructions necessary
-for gathering system hardware specifications and resource utilization.
+`host_usage.sh` was created using shell scripting language to provide streamline instructions necessary
+for gathering system hardware utilization.
+
+`crontab` is used so that the script ``host_usage.sh`` runs automatically based on how often the user needs 
+details of resource utilization to be recorded.
 
 ## Database Modeling
-- `host_info`
+### host_info
 
+| id                                             | hostname                   | cpu_number       | cpu_architecture   | cpu_model          | cpu_mhz           | l2_cache        | timestamp            | total_mem       |
+|------------------------------------------------|----------------------------|------------------|--------------------|--------------------|-------------------|-----------------|----------------------|-----------------|
+| SERIAL (Auto Generated, NOT NULL, PRIMARY KEY) | VARCHAR (NOT NULL, UNIQUE) | INT2  (NOT NULL) | VARCHAR (NOT NULL) | VARCHAR (NOT NULL) | FLOAT8 (NOT NULL) | INT4 (NOT NULL) | TIMESTAMP (NOT NULL) | INT4 (NOT NULL) |
+
+### host_usage
+
+| timestamp | host_id           | memory_free     | cpu_idle        | cpu_kernel      | disk_io         | disk_available  | 
+|-----------|-------------------|-----------------|-----------------|-----------------|-----------------|-----------------|
+| NOT NULL  | SERIAL (NOT NULL) | INT4 (NOT NULL) | INT2 (NOT NULL) | INT2 (NOT NULL) | INT4 (NOT NULL) | INT4 (NOT NULL) | 
 
 # Testing
 
@@ -68,5 +81,5 @@ Docker needs to be installed
 - Provide better parameter flexibility for the shell scripts
 - Possibility to produce a cohesive scripting solution to initialize set up
   (run a script to run psql_docker.sh then ddl.sql script to produce tables, host_info.sh to obtain hardware specs, etc.)
-- 3
+- Leave additional comments/context of the implementation of scripts
 
