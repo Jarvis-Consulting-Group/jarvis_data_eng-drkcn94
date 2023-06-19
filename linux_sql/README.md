@@ -10,31 +10,41 @@ Git and Github were used for version control and Intellij IDEA for IDE purposes.
 # Quick Start
 
 #### psql_docker.sh
+- Used to create docker container running psql database software and to run it for first time
 ```
-- to start up docker container running psql database software for first time
-./psql_docker.sh create [db_username] [db_password]
-
-- to start/stop the container after initialization
-./psql_docker.sh start | stop
+scripts/psql_docker.sh create [db_username] [db_password]
 ```
-#### ddl.sql (For creation of tables related to hardware specification and resource usage records)
+- To start/stop the container after initial creation of container
 ```
-
-
+scripts/psql_docker.sh start | stop
 ```
 
-### host_info.sh (Script to handle insertion of hardware specs record to the host_info table)
+#### ddl.sql
+- Used for the creation of tables related to hardware specification and resource usage records
+```
+psql -h localhost -U postgres -d host_agent -f sql/ddl.sql
 ```
 
+#### host_info.sh
+- Used for gathering system hardware specifications and storing in host_info table, only required to run once per system
+```
+scripts/host_info.sh [psql_host] [psql_port] [db_name] [psql_user] [psql_password]
 ```
 
-#### host_usage.sh (Script to handle insertion of resource usage records to host_usage table)
+#### host_usage.sh
+- Used for gathering logs of system resource utilization and storing in host_usage table, will require setting up in crontab afterwards
 ```
-
+scripts/host_usage.sh [psql_host] [psql_port] [db_name] [psql_user] [psql_password]
 ```
 
 # Implementation
+Implementation of the project began with understanding the necessary technologies/languages required to implement the monitoring agent.
+`psql_docker.sh` was created first so that there is a means of creating a database instance that can be interacted with to store records.
 
+`ddl.sql` was created so that there is a means of automated the necessary instructions to create the tables to store the records.
+
+`host_info.sh` and `host_usage.sh` were created last using shell scripting language to provide streamline instructions necessary 
+for gathering system hardware specifications and resource utilization.
 
 ## Architecture
 
