@@ -37,11 +37,13 @@ scripts/host_info.sh [psql_host] [psql_port] [db_name] [psql_user] [psql_passwor
 scripts/host_usage.sh [psql_host] [psql_port] [db_name] [psql_user] [psql_password]
 ```
 
+#### crontab
+- A cron job will be required to be added crontab so that host_usage runs at certain intervals of time (1 minute option is provided)
+```
+* * * * * bash /-location of host_usage.sh file-/ [psql_host] [psql_port] [db_name] [psql_user] [psql_password] &> /tmp/host_usage.log
+```
+
 # Implementation
-Implementation of the project began with understanding the necessary technologies/languages required to implement the monitoring agent. 
-Design and 
-
-
 ## Architecture
 ![Design of how monitoring agents would interact with the Database](./.assets/architecture.png)
 
@@ -71,15 +73,22 @@ details of resource utilization to be recorded.
 | NOT NULL  | SERIAL (NOT NULL, Primary key from Host_info id) | INT4 (NOT NULL) | INT2 (NOT NULL) | INT2 (NOT NULL) | INT4 (NOT NULL) | INT4 (NOT NULL) | 
 
 # Testing
+Testing of Bash scripts was done manually by reviewing execution of code with bash -x flag, errors such as typos in commands or wrong number of arguments should 
+have been caught with conditional statements. DDL script was tested by checking for errors in execution of 
+commands and checking that records were inserted into the Database.
 
 
 # Deployment
-all scripts were designed and testing to be used with Bash
-Docker needs to be installed
+- Scripts were designed and testing to be used with Bash and stored on Github for Online Repository Purposes.
+- Docker is required to be installed on the host system that will be running the container to manage the PostgreSQL database.
+- PostgreSQL CLI is recommended to be installed so that users are able to run queries on the database tables for their data 
+gathering purposes.
+- A cron job will need to be added to crontab so that host_usage runs every minute (or based on user recording needs).
 
 # Improvements
 - Provide better parameter flexibility for the shell scripts
 - Possibility to produce a cohesive scripting solution to initialize set up
-  (run a script to run psql_docker.sh then ddl.sql script to produce tables, host_info.sh to obtain hardware specs, etc.)
+  (run a script to run psql_docker.sh then ddl.sql script to produce tables, host_info.sh to obtain hardware specs, add the cron job for the user, etc.)
 - Leave additional comments/context of the implementation of scripts
+- Writing README files with more depth
 
