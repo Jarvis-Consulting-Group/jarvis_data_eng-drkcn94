@@ -73,10 +73,10 @@ details of resource utilization to be recorded.
 | NOT NULL  | SERIAL (NOT NULL, Primary key from Host_info id) | INT4 (NOT NULL) | INT2 (NOT NULL) | INT2 (NOT NULL) | INT4 (NOT NULL) | INT4 (NOT NULL) | 
 
 # Testing
-Testing of Bash scripts was done manually by reviewing execution of code with bash -x flag, errors such as typos in commands or wrong number of arguments should 
-have been caught with conditional statements. DDL script was tested by checking for errors in execution of 
-commands and checking that records were inserted into the Database.
-
+- Testing of Bash scripts was done manually by reviewing execution of code with bash -x flag, errors such as typos in commands or wrong number of arguments should be 
+caught by the conditional statements. 
+- DDL script was tested by checking for errors in execution of commands and checking that records were inserted into the Database.
+- crontab command was tested to work by checking if data records were inserted into host_usage table every minute.
 
 # Deployment
 - Scripts were designed and testing to be used with Bash and stored on Github for Online Repository Purposes.
