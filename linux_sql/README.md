@@ -66,9 +66,9 @@ details of resource utilization to be recorded.
 
 ### host_usage
 
-| timestamp | host_id           | memory_free     | cpu_idle        | cpu_kernel      | disk_io         | disk_available  | 
-|-----------|-------------------|-----------------|-----------------|-----------------|-----------------|-----------------|
-| NOT NULL  | SERIAL (NOT NULL) | INT4 (NOT NULL) | INT2 (NOT NULL) | INT2 (NOT NULL) | INT4 (NOT NULL) | INT4 (NOT NULL) | 
+| timestamp | host_id                                          | memory_free     | cpu_idle        | cpu_kernel      | disk_io         | disk_available  | 
+|-----------|--------------------------------------------------|-----------------|-----------------|-----------------|-----------------|-----------------|
+| NOT NULL  | SERIAL (NOT NULL, Primary key from Host_info id) | INT4 (NOT NULL) | INT2 (NOT NULL) | INT2 (NOT NULL) | INT4 (NOT NULL) | INT4 (NOT NULL) | 
 
 # Testing
 
