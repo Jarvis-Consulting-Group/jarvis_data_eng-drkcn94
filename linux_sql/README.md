@@ -61,12 +61,21 @@ details of resource utilization to be recorded.
 
 ## Database Modeling
 ### host_info
+- information related to the system's hardware specifications are inserted in the table once and should only have one
+ unique record
+- details recorded include system name, cpu specifications, memory amount, and time of when the record was inserted into 
+the database
 
 | id                                             | hostname                   | cpu_number       | cpu_architecture   | cpu_model          | cpu_mhz           | l2_cache        | timestamp            | total_mem       |
 |------------------------------------------------|----------------------------|------------------|--------------------|--------------------|-------------------|-----------------|----------------------|-----------------|
 | SERIAL (Auto Generated, NOT NULL, PRIMARY KEY) | VARCHAR (NOT NULL, UNIQUE) | INT2  (NOT NULL) | VARCHAR (NOT NULL) | VARCHAR (NOT NULL) | FLOAT8 (NOT NULL) | INT4 (NOT NULL) | TIMESTAMP (NOT NULL) | INT4 (NOT NULL) |
 
 ### host_usage
+- information regarding system resource utilization can be inserted into the table multiple times depending on the needs of
+ the user 
+- details stored include idle/in-use % of the processor, memory usage, disk space usage and date/time of when the record 
+was inserted into the database
+- Requires that the system id has already been recorded in `host_info` first
 
 | timestamp | host_id                                          | memory_free     | cpu_idle        | cpu_kernel      | disk_io         | disk_available  | 
 |-----------|--------------------------------------------------|-----------------|-----------------|-----------------|-----------------|-----------------|
