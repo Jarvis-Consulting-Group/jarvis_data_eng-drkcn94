@@ -38,19 +38,20 @@ scripts/host_usage.sh [psql_host] [psql_port] [db_name] [psql_user] [psql_passwo
 ```
 
 # Implementation
-Implementation of the project began with understanding the necessary technologies/languages required to implement the monitoring agent.
+Implementation of the project began with understanding the necessary technologies/languages required to implement the monitoring agent. 
+Design and 
+
+
+## Architecture
+![test picture](/.assets/Architecture/)
+
+## Scripts
 `psql_docker.sh` was created first so that there is a means of creating a database instance that can be interacted with to store records.
 
 `ddl.sql` was created so that there is a means of automated the necessary instructions to create the tables to store the records.
 
-`host_info.sh` and `host_usage.sh` were created last using shell scripting language to provide streamline instructions necessary 
+`host_info.sh` and `host_usage.sh` were created last using shell scripting language to provide streamline instructions necessary
 for gathering system hardware specifications and resource utilization.
-
-## Architecture
-
-
-## Scripts
-
 
 ## Database Modeling
 - `host_info`
