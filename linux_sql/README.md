@@ -43,7 +43,7 @@ Design and
 
 
 ## Architecture
-![test picture](/.assets/Architecture/)
+![Design of how monitoring agents would interact with the Database](/.assets/architecture.png)
 
 ## Scripts
 `psql_docker.sh` was created first so that there is a means of creating a database instance that can be interacted with to store records.
