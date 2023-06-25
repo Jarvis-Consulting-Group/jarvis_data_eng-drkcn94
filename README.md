@@ -6,9 +6,9 @@ From Seneca College, I graduated with a Honours Bachelor of Technology - Softwar
 
 **Proficient:** Java, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git
 
-**Competent:** Donec, fermentum, Donec, fermentum, Donec
+**Competent:** Spring Boot, JIRA, Javascript, IntelliJ IDEA IDE, Apache Maven
 
-**Familiar:** Donec, fermentum, fermentum, fermentum, fermentum
+**Familiar:** Google Cloud Platform, Amazon Web Services, CI/CD, Python, Docker
 
 ## Jarvis Projects
 
@@ -19,9 +19,9 @@ Project source code: [https://github.com/Jarvis-Consulting-Group/jarvis_data_eng
 
 **Core Java Apps** [[GitHub](https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-drkcn94/tree/master/core_java)]:
       
-  - Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
-  - JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
-  - Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
+  - Twitter App: Not Started
+  - JDBC App: Not Started
+  - Grep App: Not Started
 
 **Springboot App** [[GitHub](https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-drkcn94/tree/master/springboot)]: Not Started
 
@@ -35,9 +35,7 @@ Project source code: [https://github.com/Jarvis-Consulting-Group/jarvis_data_eng
 
 
 ## Highlighted Projects
-**Web app for resturant** [[GitHub](https://github.com/jarviscanada/jarvis_profile_builder)]: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
-
-**Machine Learning**: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
+**Web app for Badminton Club Managemment and Player Statistics (Shuttlestats)**: Currently Developing a Passion Project to assist Badminton Club/Group Managers and myself with management duties including recording payment history of players, attendance of sessions, and player match history/statistics including total win/loss record, and partner win rate/synergy.
 
 
 ## Professional Experiences
@@ -53,6 +51,6 @@ Project source code: [https://github.com/Jarvis-Consulting-Group/jarvis_data_eng
 
 
 ## Miscellaneous
-- Training for Badminton for over a decade, always looking to improve on my play
-- I love reading about the next destination I could travel to
+- Training for Badminton for over a decade, always looking to improve on how I play
+- I love reading about the next destination to travel to
 - Growing up with a Dad that loved building computers, I got into it as well and always look into the latest consumer computer technology and building custom PCs
