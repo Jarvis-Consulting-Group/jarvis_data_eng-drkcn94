@@ -13,7 +13,7 @@ github_repo_root_url: https://github.com/Jarvis-Consulting-Group/jarvis_data_eng
 
 # Introduce yourself, your academic and professional background.
 # What excites you about the software industry and your passion. At least 80 words
-summary: From Seneca College, I graduated with a Honours Bachelor of Technology - Software Development, over the years studying in the program, I learned practical software development technologies and skills such as Docker, Linux Shell Scripting, Agile/Scrum and software application design. Previously, my experience was related to project and processes management at a condominium development consulting company where my focus was spent streamlining workflow processes, making sure that projects were proceeding in a timely manner and managing communication between teams and execution of project steps. My knowledge of software development includes Java, Springboot, SQL, Docker, AWS/GCP, and Git/Github. As a budding junior developer, I am always looking into the possibilities of producing software that will assist in running my life and contributing to my career development.
+summary: From Seneca College, I graduated with a Honours Bachelor of Technology - Software Development. Throughout my years studying in the program and working at Nexolink Inc. for a co-op work term lasting close to a year, I learned practical software development technologies and skills such as Docker, Linux Shell Scripting, Agile & Scrum and software application design. My knowledge of software development includes Java, Javascript, Spring Boot, SQL, Docker, AWS/GCP, and Git/Github. Previously, my experience was related to project and processes management at a condominium development consulting company where my focus was spent streamlining workflow processes, making sure that projects were proceeding in a timely manner and managing communication between teams and execution of project phases. As a budding junior developer, I am always looking for opportunities to produce software that will assist in running my life and contributing to my career development.
 
 # Group your skills by level.
 # Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
@@ -30,12 +30,12 @@ skills:
     - Spring Boot
     - JIRA
     - Javascript
-    - IntelliJ IDEA IDE
+    - Google Cloud Platform
     - Apache Maven
   # At least 5 skills
   familiar:
-    - Google Cloud Platform
     - Amazon Web Services
+    - C#
     - CI/CD
     - Python
     - Docker
@@ -46,38 +46,38 @@ jarvis_projects:
     git_url: "/linux_sql"
     # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: "Developed a monitoring agent program using Bash scripting for recording of hardware specifications and resource utilization of linux clusters. The program was implemented using Bash scripting, Docker, PostgreSQL, and crontab. Testing of the application was done using bash's debugging features with the flag -x and with logging of errors to stderr to temporary log files. Deployment of the application was done by Dockerizing the PostgreSQL database management software and the adding the host_usage.sh script to crontab to continuously record and insert data regarding hardware usage to the database."
-  - name: "Core Java Apps"
-    git_url: "/core_java"
-    description:
-      - "Twitter App: Not Started"
-      - "JDBC App: Not Started"
-      - "Grep App: Not Started"
-  - name: "Springboot App"
-    git_url: "/springboot"
-    description: ""
-  - name: "Python Data Analytics"
-    git_url: "/python_data_anlytics"
-    description: ""
-  - name: "Hadoop"
-    git_url: "/hadoop"
-    description: ""
-  - name: "Spark"
-    git_url: "/spark"
-    description: ""
-  - name: "Cloud/DevOps"
-    git_url: "/cloud_devops"
-    description: ""
+    description: "Developed a monitoring agent program using Bash scripting for recording of hardware specifications and resource utilization of linux clusters. The program was implemented using Bash scripting, Docker, PostgreSQL, and crontab. Testing of the application was done manually. Deployment of the application was done by Dockerizing the PostgreSQL instance to handle data insertion."
+#  - name: "Core Java Apps"
+#    git_url: "/core_java"
+#    description:
+#      - "Twitter App: Not Started"
+#      - "JDBC App: Not Started"
+#      - "Grep App: Not Started"
+#  - name: "Springboot App"
+#    git_url: "/springboot"
+#    description: ""
+#  - name: "Python Data Analytics"
+#    git_url: "/python_data_anlytics"
+#    description: ""
+#  - name: "Hadoop"
+#    git_url: "/hadoop"
+#    description: ""
+#  - name: "Spark"
+#    git_url: "/spark"
+#    description: ""
+#  - name: "Cloud/DevOps"
+#    git_url: "/cloud_devops"
+#    description: ""
 
 # List of personal or academic projects
 # Feel free to add more projects
 highlighted_projects:
     #project name
-  - name: "Web app for Badminton Club Managemment and Player Statistics (Shuttlestats)"
+  - name: "Web app for Badminton Club Management and Player Statistics (Shuttlestats)"
     #URL is optional
-    git_url: ""
+    git_url: "https://github.com/drkcn94/shuttlestats"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: Currently Developing a Passion Project to assist Badminton Club/Group Managers and myself with management duties including recording payment history of players, attendance of sessions, and player match history/statistics including total win/loss record, and partner win rate/synergy.
+    description: Currently developing a passion project built with Java, MySQL, and Spring Boot to assist Badminton Club/Group Managers. Testing is done using manual and automated systems such as Postman, JUnit and Mockito. Features included are management duties including tracking of payment history and attendance of players, and player match history/statistics including total win/loss record, and partner win rate/synergy.
 #  - name: "Machine Learning"
 #    git_url:
 #    description: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
@@ -91,12 +91,15 @@ professional_experience:
     company: "Jarvis"
     duration: "2023-present"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: "Onboarded as a software developer to Jarvis assist and develop software solutions for clients and training. The work environment requires an understanding and usage of Agile/Scrum and open, positive mindset for continuous growth and understanding of software development."
+    description: "Working as a software developer to assist and develop software solutions for various financial sector clients. The work environment requires an understanding and usage of Agile/Scrum and open, positive mindset for continuous growth and understanding of software development."
   - title: "Business Operations Assistant"
     company: "MBRA Canada Inc."
     duration: "2022-2023"
     description: "Lead the development of workflow processes and maintaining communications among various teams and companies working on condominium developments. Workflow processes required the knowledge of folder structures and scripting to automate the saving of legal documents and condominium files. Daily reporting was done to all stakeholder individuals/companies to make sure that everyone had the same details regarding projects. Continuous research was done to understand if the workflow processes implemented were suitable for the working circumstances and standards of clients or improvements were required."
-
+  - title: "Quality Assurance Analyst"
+    company: "Nexolink Inc."
+    duration: "2021-2022"
+    description: "Researched and led a venture focused on allowing clients to scrape their own financial details with automated scripts. Successfully trained a team of five in the usage of Selenium IDE and Postman, resulting in 12% more bugs being caught earlier. Developed Selenium and Postman scripts for unit and integration testing of Foreign Exchange Payment Platform E2EFX."
 #List of education
 education: 
   - school_name: "Seneca College"
@@ -107,7 +110,7 @@ education:
     awards_achievements:
 #      - "Scholarship"
 #      - "Dean's List (2015, 2016): Ut enim ad minim veniam"
-      - "GPA: 3.4/4.0"
+#      - "GPA: 3.4/4.0"
 #  - school_name: "XYZ university"
 #    duration: "2016-2018"
 #    degree: "Master of Engineering"
@@ -126,6 +129,6 @@ others:
 #      - "Winner"
   - title: "Activities/Hobbies"
     bullets:
-      - "Training for Badminton for over a decade, always looking to improve on how I play"
+      - "I have been playing and training for Badminton for over a decade for enjoyment, always looking to improve on how I play"
       - "I love reading about the next destination to travel to"
-      - "Growing up with a Dad that loved building computers, I got into it as well and always look into the latest consumer computer technology and building custom PCs"
+      - "Growing up with a Dad that loved building computers, I got into it as well and always look into the latest consumer computer technology and building custom PCs for friends and myself"
