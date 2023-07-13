@@ -291,3 +291,12 @@ from
     ) as ranked
 where
         rank = 1;
+
+
+
+select
+            surname || ', ' || firstname
+from
+    members;
+
+
