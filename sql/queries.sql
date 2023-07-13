@@ -1,6 +1,8 @@
 INSERT INTO facilities
 VALUES
     (9, 'Spa', 20, 30, 100000, 800);
+
+
 INSERT INTO facilities (
     facid, name, membercost, guestcost,
     initialoutlay, monthlymaintenance
@@ -17,12 +19,16 @@ SELECT
         30,
         100000,
         800;
+
+
 UPDATE
     facilities
 SET
     initialoutlay = 10000
 WHERE
         name = 'Tennis Court 2';
+
+
 UPDATE
     facilities
 SET
@@ -44,12 +50,18 @@ SET
                 ) * 1.1
 WHERE
         name = 'Tennis Court 2';
+
+
 DELETE FROM
     bookings;
+
+
 DELETE FROM
     members
 WHERE
         memid = 37;
+
+
 SELECT
     FACID,
     NAME,
