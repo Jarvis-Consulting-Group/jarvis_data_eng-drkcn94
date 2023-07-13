@@ -1,51 +1,65 @@
-INSERT INTO facilities VALUES
+INSERT INTO facilities
+VALUES
     (9, 'Spa', 20, 30, 100000, 800);
-
-
-INSERT INTO facilities (facid, name, membercost, guestcost, initialoutlay, monthlymaintenance)
-    SELECT (SELECT MAX(facid) FROM cd.facilities) +1, 'Spa', 20, 30, 100000, 800;
-
-
-UPDATE facilities
-SET  initialoutlay  = 10000
-WHERE name = 'Tennis Court 2';
-
-
-UPDATE facilities
-SET
-    membercost = (SELECT membercost FROM cd.facilities where name = 'Tennis Court 1') * 1.1,
-    guestcost = (SELECT guestcost FROM cd.facilities where name = 'Tennis Court 1') * 1.1
-WHERE name = 'Tennis Court 2';
-
-
-DELETE FROM bookings;
-
-
-DELETE FROM members
-WHERE memid = 37;
-
-
+INSERT INTO facilities (
+    facid, name, membercost, guestcost,
+    initialoutlay, monthlymaintenance
+)
 SELECT
-    FACID ,
-    NAME ,
-    MEMBERCOST ,
+        (
+            SELECT
+                MAX(facid)
+            FROM
+                facilities
+        ) + 1,
+        'Spa',
+        20,
+        30,
+        100000,
+        800;
+UPDATE
+    facilities
+SET
+    initialoutlay = 10000
+WHERE
+        name = 'Tennis Court 2';
+UPDATE
+    facilities
+SET
+    membercost = (
+                     SELECT
+                         membercost
+                     FROM
+                         facilities
+                     where
+                             name = 'Tennis Court 1'
+                 ) * 1.1,
+    guestcost = (
+                    SELECT
+                        guestcost
+                    FROM
+                        facilities
+                    where
+                            name = 'Tennis Court 1'
+                ) * 1.1
+WHERE
+        name = 'Tennis Court 2';
+DELETE FROM
+    bookings;
+DELETE FROM
+    members
+WHERE
+        memid = 37;
+SELECT
+    FACID,
+    NAME,
+    MEMBERCOST,
     MONTHLYMAINTENANCE
 FROM
     FACILITIES
 WHERE
         MEMBERCOST > 0
-  AND
-        MEMBERCOST < MONTHLYMAINTENANCE / 50;
-
-
-
-SELECT
-    *
-FROM
-    FACILITIES
-WHERE
-    NAME LIKE '%Tennis%';
-
+  AND MEMBERCOST < MONTHLYMAINTENANCE / 50;
 
 
 SELECT
@@ -53,8 +67,16 @@ SELECT
 FROM
     FACILITIES
 WHERE
-    FACID BETWEEN 1 AND 5;
+        NAME LIKE '%Tennis%';
 
+
+SELECT
+    *
+FROM
+    FACILITIES
+WHERE
+    FACID BETWEEN 1
+        AND 5;
 
 
 SELECT
@@ -65,8 +87,7 @@ SELECT
 FROM
     MEMBERS
 WHERE
-    JOINDATE >= '2012-09-01';
-
+        JOINDATE >= '2012-09-01';
 
 
 SELECT
@@ -80,19 +101,14 @@ FROM
     FACILITIES;
 
 
-
 select
     starttime
 from
     bookings
-        inner join members
-                   on
-                           bookings.memid = members.memid
+        inner join members on bookings.memid = members.memid
 where
         members.firstname = 'David'
-  and
-        members.surname = 'Farrell';
-
+  and members.surname = 'Farrell';
 
 
 select
@@ -100,17 +116,13 @@ select
     name
 from
     bookings
-        inner join
-    facilities
-    on
-            bookings.facid = facilities.facid
+        inner join facilities on bookings.facid = facilities.facid
 where
         facilities.name like 'Tennis Court%'
-  and
-    bookings.starttime between '2012-09-21' and '2012-09-22'
+  and bookings.starttime between '2012-09-21'
+    and '2012-09-22'
 order by
     bookings.starttime;
-
 
 
 select
@@ -119,26 +131,19 @@ select
     recs.firstname as recfname,
     recs.surname as recsname
 from
-    cd.members mems
-left outer join
-    cd.members recs
-        on
-            recs.memid = mems.recommendedby
+    members mems
+        left outer join members recs on recs.memid = mems.recommendedby
 order by
     memsname,
     memfname;
 
 
 select
-    distinct
-    rec.firstname as fname,
-    rec.surname as sname
+    distinct rec.firstname as fname,
+             rec.surname as sname
 from
-    cd.members rec
-        left join
-    cd.members mem
-    on
-            rec.memid = mem.recommendedby
+    members rec
+        left join members mem on rec.memid = mem.recommendedby
 where
     mem.recommendedby is not null
 order by
@@ -146,30 +151,27 @@ order by
     fname;
 
 
-
 select
-    distinct
-        a.firstname || ' ' || a.surname as member,
-        (
-            select
-                    b.firstname || ' ' || b.surname as recommender
-            from
-                cd.members as b
-            where
-                    b.memid = a.recommendedby
-        )
+    distinct a.firstname || ' ' || a.surname as member,
+             (
+                 select
+                             b.firstname || ' ' || b.surname as recommender
+                 from
+                     members as b
+                 where
+                         b.memid = a.recommendedby
+             )
 from
-    cd.members as a
+    members as a
 order by
     member;
-
 
 
 select
     recommendedby,
     COUNT(recommendedby)
 from
-    cd.members
+    members
 where
     recommendedby is not null
 group by
@@ -178,45 +180,47 @@ order by
     recommendedby;
 
 
-
 select
     facid,
     sum(slots) as "Total Slots"
 from
-    cd.bookings
+    bookings
 group by
     facid
 order by
     facid;
 
 
-
 select
     FACID,
     SUM(SLOTS) as "Total Slots"
 from
-    cd.bookings
+    bookings
 where
-    STARTTIME between '2012-09-01' and '2012-10-01'
+    STARTTIME between '2012-09-01'
+        and '2012-10-01'
 group by
     FACID
 order by
     "Total Slots";
 
 
-
 select
     FACID,
-    extract(month
+    extract(
+            month
             from
-            STARTTIME) as month,
-			SUM(SLOTS) as "TOTAL SLOTS"
+            STARTTIME
+        ) as month,
+    SUM(SLOTS) as "TOTAL SLOTS"
 from
-    cd.bookings
+    bookings
 where
-    extract(year
-    from
-    STARTTIME) = 2012
+        extract(
+                year
+                from
+                STARTTIME
+            ) = 2012
 group by
     FACID,
     month
@@ -225,11 +229,10 @@ order by
     month;
 
 
-
 select
     COUNT(distinct memid)
 from
-    cd.bookings;
+    bookings;
 
 
 select
@@ -238,11 +241,8 @@ select
     mem.memid,
     min(bk.starttime) as starttime
 from
-    cd.members as mem
-        inner join
-    cd.bookings as bk
-    on
-            mem.memid = bk.memid
+    members as mem
+        inner join bookings as bk on mem.memid = bk.memid
 where
         starttime >= '2012-09-01'
 group by
@@ -250,28 +250,28 @@ group by
     firstname,
     mem.memid
 order by
-    mem.memid
-
+    mem.memid;
 
 
 select
-    count(*) over(),
-        firstname,
-    surname
+            count(*) over(),
+            firstname,
+            surname
 from
-    cd.members
+    members
 order by
     joindate;
 
 
-
 select
-    row_number() over(
-	order by JOINDATE),
-        firstname,
-    surname
+            row_number() over(
+        order by
+            JOINDATE
+        ),
+            firstname,
+            surname
 from
-    cd.members
+    members;
 
 
 select
@@ -283,15 +283,16 @@ from
             facid,
             sum(slots) total,
             rank() over(
-		order by sum(slots) desc) rank
+                order by
+                    sum(slots) desc
+                ) rank
         from
-            cd.bookings
+            bookings
         group by
             facid
     ) as ranked
 where
         rank = 1;
-
 
 
 select
@@ -300,3 +301,21 @@ from
     members;
 
 
+select
+    memid,
+    telephone
+from
+    members
+where
+        telephone ~ '[()]';
+
+
+select
+    SUBSTRING(surname, 1, 1) as letter,
+    count(*)
+from
+    members
+group by
+    letter
+order by
+    letter;
