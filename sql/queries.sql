@@ -85,10 +85,9 @@ WHERE
 SELECT
     *
 FROM
-    FACILITIES
+    facilities
 WHERE
-    FACID BETWEEN 1
-        AND 5;
+        facid IN (1, 5);
 
 
 SELECT
