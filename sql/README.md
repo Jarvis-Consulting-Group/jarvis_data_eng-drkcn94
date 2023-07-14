@@ -1,4 +1,3 @@
-cat > README.md << EOF
 # Introduction
 The goal of the RDBMS and SQL project was to assist a company in understanding how they can extract information from their database regarding usage of facilities by their clientele. The technologies used to develop this project are PSQL queries to extract information, a PostgreSQL database that maintained all details in relation to the company and Docker to manage the deployment of the PostgreSQL database. Git and GitHub were used for version control.
 
