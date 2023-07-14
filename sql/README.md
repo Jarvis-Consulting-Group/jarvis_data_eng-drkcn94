@@ -1,11 +1,49 @@
 cat > README.md << EOF
 # Introduction
+The goal of the RDBMS and SQL project was to assist a company in understanding how they can extract information from their database regarding usage of facilities by their clientele. The technologies used to develop this project are PSQL queries to extract information, a PostgreSQL database that maintained all details in relation to the company and Docker to manage the deployment of the PostgreSQL database. Git and GitHub were used for version control.
 
 # SQL Queries
 
 ###### Table Setup (DDL)
 
+```sql
+CREATE TABLE IF NOT EXISTS members (
+                                       memid INTEGER NOT NULL,
+                                       surname VARCHAR(200) NOT NULL,
+                                       firstname VARCHAR(200) NOT NULL,
+                                       address VARCHAR(300) NOT NULL,
+                                       zipcode INTEGER NOT NULL,
+                                       telephone VARCHAR(20) NOT NULL,
+                                       recommendedby INTEGER,
+                                       joindate TIMESTAMP NOT NULL,
+                                       CONSTRAINT members_pk PRIMARY KEY (memid),
+                                       CONSTRAINT fk_members_recommendedby FOREIGN KEY (recommendedby) REFERENCES members(memid) ON DELETE
+                                           SET
+                                           NULL
+);
 
+CREATE TABLE IF NOT EXISTS bookings (
+                                        bookingid INTEGER NOT NULL,
+                                        facid INTEGER NOT NULL,
+                                        memid INTEGER NOT NULL,
+                                        starttime TIMESTAMP NOT NULL,
+                                        slots INTEGER NOT NULL,
+                                        CONSTRAINT bookings_pk PRIMARY KEY (bookingid),
+                                        CONSTRAINT fk_bookings_facid FOREIGN KEY (facid) REFERENCES facilities(facid),
+                                        CONSTRAINT fk_bookings_memid FOREIGN KEY (memid) REFERENCES members(memid)
+);
+
+CREATE TABLE IF NOT EXISTS facilities (
+                                          facid int NOT NULL,
+                                          name varchar(100),
+                                          membercost numeric,
+                                          guestcost numeric,
+                                          initialoutlay numeric,
+                                          monthlymaintenance numeric,
+                                          CONSTRAINT facilities_pk PRIMARY KEY (facid)
+);
+  
+```
 
 
 ###### Question 1: Insert data into a table
@@ -152,7 +190,7 @@ FROM
     FACILITIES;
 ```
 
-##### Question 12: Retrieve the start times of members' bookings
+###### Question 12: Retrieve the start times of members' bookings
 ```sql
 select
     starttime
@@ -164,7 +202,7 @@ where
   and members.surname = 'Farrell';
 ```
 
-##### Question 13: Work out the start times of bookings for tennis courts
+###### Question 13: Work out the start times of bookings for tennis courts
 ```sql
 select
     starttime,
@@ -180,7 +218,7 @@ order by
     bookings.starttime;
 ```
 
-##### Question 14: Produce a list of all members, along with their recommender
+###### Question 14: Produce a list of all members, along with their recommender
 ```sql
 select
     mems.firstname as memfname,
@@ -195,7 +233,7 @@ order by
     memfname;
 ```
 
-##### Question 15: Produce a list of all members who have recommended another member
+###### Question 15: Produce a list of all members who have recommended another member
 ```sql
 select
     distinct rec.firstname as fname,
@@ -210,7 +248,7 @@ order by
     fname;
 ```
 
-##### Question 16: Produce a list of all members, along with their recommender, using no joins.
+###### Question 16: Produce a list of all members, along with their recommender, using no joins.
 ```sql
 select
     distinct a.firstname || ' ' || a.surname as member,
@@ -228,7 +266,7 @@ order by
     member;
 ```
 
-##### Question 17: Count the number of recommendations each member makes.
+###### Question 17: Count the number of recommendations each member makes.
 ```sql
 select
     recommendedby,
@@ -243,7 +281,7 @@ order by
     recommendedby;
 ```
 
-##### Question 18: List the total slots booked per facility
+###### Question 18: List the total slots booked per facility
 ```sql
 select
     facid,
@@ -256,7 +294,7 @@ order by
     facid;
 ```
 
-##### Question 19: List the total slots booked per facility in a given month
+###### Question 19: List the total slots booked per facility in a given month
 ```sql
 select
     FACID,
@@ -272,7 +310,7 @@ order by
     "Total Slots";
 ```
 
-##### Question 20: List the total slots booked per facility per month
+###### Question 20: List the total slots booked per facility per month
 ```sql
 select
     FACID,
@@ -298,7 +336,7 @@ order by
     month;
 ```
 
-##### Question 21: Find the count of members who have made at least one booking
+###### Question 21: Find the count of members who have made at least one booking
 ```sql
 select
     COUNT(distinct memid)
@@ -306,7 +344,7 @@ from
     bookings;
 ```
 
-##### Question 22: List each member's first booking after September 1st 2012
+###### Question 22: List each member's first booking after September 1st 2012
 ```sql
 select
     surname,
@@ -326,7 +364,7 @@ order by
     mem.memid;
 ```
 
-##### Question 23: Produce a list of member names, with each row containing the total member count
+###### Question 23: Produce a list of member names, with each row containing the total member count
 ```sql
 select
             count(*) over(),
@@ -338,7 +376,7 @@ order by
     joindate;
 ```
 
-##### Question 24: Produce a numbered list of members
+###### Question 24: Produce a numbered list of members
 ```sql
 select
             row_number() over(
@@ -351,7 +389,7 @@ from
     members;
 ```
 
-##### Question 25: Output the facility id that has the highest number of slots booked, again
+###### Question 25: Output the facility id that has the highest number of slots booked, again
 ```sql
 select
     facid,
@@ -374,7 +412,7 @@ where
         rank = 1;
 ```
 
-##### Question 26: Format the names of members
+###### Question 26: Format the names of members
 ```sql
 select
             surname || ', ' || firstname
@@ -382,7 +420,7 @@ from
     members;
 ```
 
-##### Question 27: Find telephone numbers with parentheses
+###### Question 27: Find telephone numbers with parentheses
 ```sql
 select
     memid,
@@ -393,7 +431,7 @@ where
         telephone ~ '[()]';
 ```
 
-##### Question 28: Count the number of members whose surname starts with each letter of the alphabet
+###### Question 28: Count the number of members whose surname starts with each letter of the alphabet
 ```sql
 select
     SUBSTRING(surname, 1, 1) as letter,
