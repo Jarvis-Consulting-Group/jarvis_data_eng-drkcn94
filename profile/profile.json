@@ -21,14 +21,22 @@
       "description": "Developed a monitoring agent program using Bash scripting for recording of hardware specifications and resource utilization of linux clusters. The program was implemented using Bash scripting, Docker, PostgreSQL, and crontab. Testing of the application was done manually. Deployment of the application was done by Dockerizing the PostgreSQL instance to handle data insertion.",
       "git_url": "/linux_sql",
       "name": "Cluster Monitor"
+    },
+    {
+      "description": [
+        "JDBC App: Created a inventory and sales order management application using Java, JDBC API, maven, and postgreSQL. The application assists with recording and retrieving inventory details and orders of customers in a database. Testing of the application was done manually and results were compared against queries that were executed with DBeaver. Deployment of the database was done with Docker for the PostgreSQL instance.",
+        "Grep App: Not Started"
+      ],
+      "git_url": "/core_java",
+      "name": "Core Java Apps"
     }
   ],
   "name": "Derek Chan",
   "others": [
     {
       "bullets": [
-        "I have been playing and training for Badminton for over a decade for enjoyment, always looking to improve on how I play",
-        "I love reading about the next destination to travel to",
+        "I have been playing and training for badminton for over a decade for enjoyment, always looking to improve on how I play",
+        "I love reading about my next potential travel destination",
         "Growing up with a Dad that loved building computers, I got into it as well and always look into the latest consumer computer technology and building custom PCs for friends and myself"
       ],
       "title": "Activities/Hobbies"
