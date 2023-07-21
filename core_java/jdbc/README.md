@@ -4,11 +4,9 @@ The technologies used for the development of this project are Java and the JDBC 
 PostgreSQL database to persist the data, and Docker for dependencies management and deployment of the PostgreSQL instance. Git and GitHub were used for version control and 
 Apache Maven was used for building of the project and dependency management of java libraries. Deployment of the application was done on a Google Cloud Platform virtual machine.
 
-
 # Implementation
 ## ER Diagram
 ![Entity Relationship Diagram of hplussport database](./.assets/ERD.png)
-
 
 ## Design Patterns
 ### DAO Pattern
@@ -20,7 +18,6 @@ The Repository Pattern is a higher level concept with a closer relation to domai
 The Repository Pattern is a domain-driven design which makes the data structures of the application easier to understand for all team members. 
 Compared to the DAO Pattern, Repository Pattern hides the complexity of collating data and preparing a complex domain object. The pattern may 
 also use one or multiple DAO classes to access necessary data.
-
 
 # Test
 - Creation of the database was done using DBeaver and executing DDL SQL commands to create the tables based on sample data
