@@ -17,6 +17,11 @@ Project source code: [https://github.com/Jarvis-Consulting-Group/jarvis_data_eng
 
 **Cluster Monitor** [[GitHub](https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-drkcn94/tree/master/linux_sql)]: Developed a monitoring agent program using Bash scripting for recording of hardware specifications and resource utilization of linux clusters. The program was implemented using Bash scripting, Docker, PostgreSQL, and crontab. Testing of the application was done manually. Deployment of the application was done by Dockerizing the PostgreSQL instance to handle data insertion.
 
+**Core Java Apps** [[GitHub](https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-drkcn94/tree/master/core_java)]:
+      
+  - JDBC App: Created a inventory and sales order management application using Java, JDBC API, maven, and postgreSQL. The application assists with recording and retrieving inventory details and orders of customers in a database. Testing of the application was done manually and results were compared against queries that were executed with DBeaver. Deployment of the database was done with Docker for the PostgreSQL instance.
+  - Grep App: Not Started
+
 
 ## Highlighted Projects
 **Web app for Badminton Club Management and Player Statistics (Shuttlestats)** [[GitHub](https://github.com/drkcn94/shuttlestats)]: Currently developing a passion project built with Java, MySQL, and Spring Boot to assist Badminton Club/Group Managers. Testing is done using manual and automated systems such as Postman, JUnit and Mockito. Features included are management duties including tracking of payment history and attendance of players, and player match history/statistics including total win/loss record, and partner win rate/synergy.
@@ -36,6 +41,6 @@ Project source code: [https://github.com/Jarvis-Consulting-Group/jarvis_data_eng
 
 
 ## Miscellaneous
-- I have been playing and training for Badminton for over a decade for enjoyment, always looking to improve on how I play
-- I love reading about the next destination to travel to
+- I have been playing and training for badminton for over a decade for enjoyment, always looking to improve on how I play
+- I love reading about my next potential travel destination
 - Growing up with a Dad that loved building computers, I got into it as well and always look into the latest consumer computer technology and building custom PCs for friends and myself
