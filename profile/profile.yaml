@@ -47,12 +47,12 @@ jarvis_projects:
     # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
     # The project description must start with an action verb (https://bit.ly/3guO98u)
     description: "Developed a monitoring agent program using Bash scripting for recording of hardware specifications and resource utilization of linux clusters. The program was implemented using Bash scripting, Docker, PostgreSQL, and crontab. Testing of the application was done manually. Deployment of the application was done by Dockerizing the PostgreSQL instance to handle data insertion."
-#  - name: "Core Java Apps"
-#    git_url: "/core_java"
-#    description:
+  - name: "Core Java Apps"
+    git_url: "/core_java"
+    description:
 #      - "Twitter App: Not Started"
-#      - "JDBC App: Not Started"
-#      - "Grep App: Not Started"
+      - "JDBC App: Created a inventory and sales order management application using Java, JDBC API, maven, and postgreSQL. The application assists with recording and retrieving inventory details and orders of customers in a database. Testing of the application was done manually and results were compared against queries that were executed with DBeaver. Deployment of the database was done with Docker for the PostgreSQL instance."
+      - "Grep App: Not Started"
 #  - name: "Springboot App"
 #    git_url: "/springboot"
 #    description: ""
