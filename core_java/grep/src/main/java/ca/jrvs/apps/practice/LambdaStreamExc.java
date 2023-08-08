@@ -32,5 +32,7 @@ public interface LambdaStreamExc {
 
     void printOdd(IntStream intStream, Consumer<String> printer);
 
-    Stream<Integer> flatNestedInt(Stream<List<Integer>> ints);
+    Stream<Integer> flatNestedIntFlatMapImp(Stream<List<Integer>> ints);
+
+    Stream<Integer> flatNestedIntForEachImp(Stream<List<Integer>> ints);
 }

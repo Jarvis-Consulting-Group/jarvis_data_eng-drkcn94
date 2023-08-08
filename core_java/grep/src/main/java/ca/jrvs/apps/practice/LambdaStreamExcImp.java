@@ -1,5 +1,6 @@
 package ca.jrvs.apps.practice;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
@@ -59,21 +60,31 @@ public class LambdaStreamExcImp implements LambdaStreamExc{
 
     @Override
     public Consumer<String> getLambdaPrinter(String prefix, String suffix) {
-        return null;
+        return message -> System.out.println(prefix + message + suffix);
     }
 
     @Override
     public void printMessages(String[] messages, Consumer<String> printer) {
-
+        Stream.of(messages).forEach(printer);
     }
 
     @Override
     public void printOdd(IntStream intStream, Consumer<String> printer) {
-
+        getOdd(intStream).boxed().forEach(number -> printer.accept(number.toString()));
     }
 
     @Override
-    public Stream<Integer> flatNestedInt(Stream<List<Integer>> ints) {
-        return null;
+    public Stream<Integer> flatNestedIntFlatMapImp(Stream<List<Integer>> ints) {
+        return ints
+                .flatMap(List::stream)
+                .map(i -> i * i);
+    }
+
+    @Override
+    public Stream<Integer> flatNestedIntForEachImp(Stream<List<Integer>> ints) {
+        List<Integer> result = new ArrayList<>();
+        ints.forEach(list -> list.forEach(i -> result.add(i * i)));
+        
+        return result.stream();
     }
 }
