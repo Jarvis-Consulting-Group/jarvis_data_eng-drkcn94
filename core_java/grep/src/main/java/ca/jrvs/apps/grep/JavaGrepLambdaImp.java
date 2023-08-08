@@ -4,25 +4,123 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-public class JavaGrepLambdaImp extends JavaGrepImp{
+public class JavaGrepLambdaImp implements JavaGrepLambda {
     private static final Logger logger = LoggerFactory.getLogger(JavaGrep.class);
+    private String regex;
+    private String rootPath;
+    private String outFile;
 
     @Override
-    public void process() throws IOException {
-        super.process();
+    public void process() {
+        logger.info("Processing Files for lines");
+        List<String> matchedLines = listFiles(rootPath)
+                .flatMap(this::readLines)
+                .filter(this::containsPattern)
+                .collect(Collectors.toList());
+
+        logger.info("Writing lines to {}", outFile);
+        writeToFile(matchedLines);
     }
 
     @Override
-    public List<File> listFiles(String rootDir) {
-        return super.listFiles(rootDir);
+    public Stream<File> listFiles(String rootDir) {
+        try {
+            return Files.walk(Paths.get(rootDir))
+                    .filter(Files::isRegularFile)
+                    .map(Path::toFile);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
-    public List<String> readLines(File inputFile) {
-        return super.readLines(inputFile);
+    public Stream<String> readLines(File inputFile) {
+        try {
+            return Files.lines(inputFile.toPath());
+        } catch (IOException e) {
+            logger.error("Error trying to read from file {}", inputFile, e);
+            return Stream.empty();
+        }
+    }
+
+    @Override
+    public boolean containsPattern(String line) {
+        Pattern pattern = Pattern.compile(this.regex);
+        Matcher matcher = pattern.matcher(line);
+
+        if (matcher.find()) {
+            logger.debug("Pattern {} is in Line {}", this.regex, line);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public void writeToFile(List<String> lines) {
+        try {
+            File file = new File(this.outFile);
+            file.getParentFile().mkdirs();
+
+            logger.debug("Creating new try with resources statement for writing to output file");
+            try (FileWriter fileWriter = new FileWriter(this.outFile)) {
+                int index = 0;
+
+                while (index < lines.size()) {
+                    String line = lines.get(index);
+                    if (line != null) {
+                        logger.debug("Adding {} to {}", line, this.outFile);
+                        fileWriter.write(line.trim() + "\n");
+                    }
+                    index++;
+                }
+            } catch (IOException e) {
+                logger.error("Unable to write to file", e);
+            }
+        } catch (SecurityException e) {
+            logger.error("Unable to create directories and file to write to");
+        }
+    }
+
+    @Override
+    public String getRegex() {
+        return regex;
+    }
+
+    @Override
+    public void setRegex(String regex) {
+        this.regex = regex;
+    }
+
+    @Override
+    public String getRootPath() {
+        return rootPath;
+    }
+
+    @Override
+    public void setRootPath(String rootPath) {
+        this.rootPath = rootPath;
+    }
+
+    @Override
+    public String getOutFile() {
+        return outFile;
+    }
+
+    @Override
+    public void setOutFile(String outFile) {
+        this.outFile = outFile;
     }
 
     public static void main(String[] args) {
