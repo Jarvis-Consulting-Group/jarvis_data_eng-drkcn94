@@ -98,7 +98,7 @@ public class JavaGrepImp implements JavaGrep{
             file.getParentFile().mkdirs();
 
             logger.debug("Creating new try with resources statement for writing to output file");
-            try (FileWriter fileWriter = new FileWriter(this.outFile)) {
+            try (FileWriter fileWriter = new FileWriter(file)) {
                 int index = 0;
 
                 while (index < lines.size()) {
