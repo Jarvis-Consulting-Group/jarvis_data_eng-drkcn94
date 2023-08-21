@@ -1,0 +1,134 @@
+# Preferred ender/Generate different file formats
+# #Make sure you run this command prior to every profile pull request
+# bash profile_app.sh
+#
+# #This tool will generate the following files
+# ../README.md #overwrite your existing README
+# profile.json #this file will be consumed by Jarvis Consultant App
+# jarvis_profile_John_Smith.pdf #PDF version of ../README.md
+#
+name: "Derek Chan"
+# Your GitHub repo root URL
+github_repo_root_url: https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-drkcn94
+
+# Introduce yourself, your academic and professional background.
+# What excites you about the software industry and your passion. At least 80 words
+summary: From Seneca College, I graduated with a Honours Bachelor of Technology - Software Development. Throughout my years studying in the program and working at Nexolink Inc. for a co-op work term lasting close to a year, I learned practical software development technologies and skills such as Docker, Linux Shell Scripting, Agile & Scrum and software application design. My knowledge of software development includes Java, Javascript, Spring Boot, SQL, Docker, AWS/GCP, and Git/Github. Previously, my experience was related to project and processes management at a condominium development consulting company where my focus was spent streamlining workflow processes, making sure that projects were proceeding in a timely manner and managing communication between teams and execution of project phases. As a budding junior developer, I am always looking for opportunities to produce software that will assist in running my life and contributing to my career development.
+
+# Group your skills by level.
+# Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
+skills:
+  # At least 5 skills
+  proficient:
+    - Java
+    - Linux/Bash
+    - RDBMS/SQL
+    - Agile/Scrum
+    - Git
+  # At least 5 skills
+  competent:
+    - Spring Boot
+    - JIRA
+    - Javascript
+    - Google Cloud Platform
+    - Apache Maven
+  # At least 5 skills
+  familiar:
+    - Amazon Web Services
+    - C#
+    - CI/CD
+    - Python
+    - Docker
+
+# List of Jarvis projects
+jarvis_projects:
+  - name: "Cluster Monitor"
+    git_url: "/linux_sql"
+    # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: "Developed a monitoring agent program using Bash scripting for recording of hardware specifications and resource utilization of linux clusters. The program was implemented using Bash scripting, Docker, PostgreSQL, and crontab. Testing of the application was done manually. Deployment of the application was done by Dockerizing the PostgreSQL instance to handle data insertion."
+  - name: "Core Java Apps"
+    git_url: "/core_java"
+    description:
+#      - "Twitter App: Not Started"
+      - "JDBC App: Created an inventory and sales order management application using Java, JDBC API, maven, and postgreSQL. The application assists with recording and retrieving inventory details and orders of customers in a database. Testing of the application was done manually and results were compared against queries that were executed with DBeaver. Deployment of the database was done with Docker for the PostgreSQL instance."
+      - "Grep App: Developed a custom pattern matching search tool inspired by the Unix \"grep\" command by utilizing the Java language with lambdas and streams and Apache Maven for build and dependency management. Testing of the application was done manually by logging changes in the application's state with SLF4J and Logback. The application was containerized with Docker to make deployment of the application streamlined by reducing potential environment inconsistencies."
+#  - name: "Springboot App"
+#    git_url: "/springboot"
+#    description: ""
+#  - name: "Python Data Analytics"
+#    git_url: "/python_data_anlytics"
+#    description: ""
+#  - name: "Hadoop"
+#    git_url: "/hadoop"
+#    description: ""
+#  - name: "Spark"
+#    git_url: "/spark"
+#    description: ""
+#  - name: "Cloud/DevOps"
+#    git_url: "/cloud_devops"
+#    description: ""
+
+# List of personal or academic projects
+# Feel free to add more projects
+highlighted_projects:
+    #project name
+  - name: "Web app for Badminton Club Management and Player Statistics (Shuttlestats)"
+    #URL is optional
+    git_url: "https://github.com/drkcn94/shuttlestats"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: Currently developing a passion project built with Java, MySQL, and Spring Boot to assist Badminton Club/Group Managers. Testing is done using manual and automated systems such as Postman, JUnit and Mockito. Features included are management duties including tracking of payment history and attendance of players, and player match history/statistics including total win/loss record, and partner win rate/synergy.
+#  - name: "Machine Learning"
+#    git_url:
+#    description: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
+
+#List of professional experience
+#The job description allows hiring managers to understand your job and the technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+#The description must be more than 25 words. If your experience is not software related, please focus on soft skills and achievements (e.g. team collaboration, problem-solving, improvements, communication).
+professional_experience:
+  #Write your Jarvis role as a professional experience rather than training.
+  - title: "Junior Software Developer"
+    company: "Jarvis"
+    duration: "2023-present"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: "Working as a software developer to assist and develop software solutions for various financial sector clients. The work environment requires an understanding and usage of Agile/Scrum and open, positive mindset for continuous growth and understanding of software development."
+  - title: "Business Operations Assistant"
+    company: "MBRA Canada Inc."
+    duration: "2022-2023"
+    description: "Coordinated cross-functional collaboration for condominium development projects, fostering seamless communication among stakeholders and internal team. Orchestrated workflow processes, leveraging folder structures and scripting to automate archival of legal condominium documents and project progress. Ensured consistent project insights by facilitating daily stakeholder updates, promoting alignment across all involved entities. Proactively refined workflow strategies through ongoing research, tailoring approaches to align with client standards and internal team needs."
+  - title: "Quality Assurance Analyst"
+    company: "Nexolink Inc."
+    duration: "2021-2022"
+    description: "Developed comprehensive unit and integrated testing suites with C#, Selenium and Postman for E2EFX, a Foreign Exchange Payment Platform. Initiated a client-focused project, allowing users to be able to automate the extraction of their financial data through Selenium IDE scripts. Trained a team of 5 with knowledge regarding quality assurance processes and data extraction application."
+#List of education
+education: 
+  - school_name: "Seneca College"
+    duration: "2018-2022"
+    degree: "Honours Bachelor of Technology"
+    department: "School of Software Design and Data Science"
+    # optional
+    awards_achievements:
+#      - "Scholarship"
+#      - "Dean's List (2015, 2016): Ut enim ad minim veniam"
+#      - "GPA: 3.4/4.0"
+#  - school_name: "XYZ university"
+#    duration: "2016-2018"
+#    degree: "Master of Engineering"
+#    department: "Electrical and Computer Engineering"
+#    awards_achievements:
+
+#Optional section
+others:
+    #category
+#  - title: "Certificates"
+#    #list of items
+#    bullets:
+#      - "Udacity Machine Learning (2019)"
+#  - title: "Awards"
+#    bullets:
+#      - "Winner"
+  - title: "Activities/Hobbies"
+    bullets:
+      - "Throughout my life, I have always been involved in badminton by training and playing in tournaments and managing my own badminton club with weekly sessions"
+      - "Growing up with a love for computer hardware, I delve into the world of building custom PCs, constantly exploring the latest consumer tech to share with friends and family"
+      - "I am always learning more about the world and creating an itinerary for my next trip"
