@@ -19,8 +19,8 @@ Project source code: [https://github.com/Jarvis-Consulting-Group/jarvis_data_eng
 
 **Core Java Apps** [[GitHub](https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-drkcn94/tree/master/core_java)]:
       
-  - JDBC App: Created a inventory and sales order management application using Java, JDBC API, maven, and postgreSQL. The application assists with recording and retrieving inventory details and orders of customers in a database. Testing of the application was done manually and results were compared against queries that were executed with DBeaver. Deployment of the database was done with Docker for the PostgreSQL instance.
-  - Grep App: Not Started
+  - JDBC App: Created an inventory and sales order management application using Java, JDBC API, maven, and postgreSQL. The application assists with recording and retrieving inventory details and orders of customers in a database. Testing of the application was done manually and results were compared against queries that were executed with DBeaver. Deployment of the database was done with Docker for the PostgreSQL instance.
+  - Grep App: Developed a custom pattern matching search tool inspired by the Unix "grep" command by utilizing the Java language with lambdas and streams and Apache Maven for build and dependency management. Testing of the application was done manually by logging changes in the application's state with SLF4J and Logback. The application was containerized with Docker to make deployment of the application streamlined by reducing potential environment inconsistencies.
 
 
 ## Highlighted Projects
@@ -31,9 +31,9 @@ Project source code: [https://github.com/Jarvis-Consulting-Group/jarvis_data_eng
 
 **Junior Software Developer, Jarvis (2023-present)**: Working as a software developer to assist and develop software solutions for various financial sector clients. The work environment requires an understanding and usage of Agile/Scrum and open, positive mindset for continuous growth and understanding of software development.
 
-**Business Operations Assistant, MBRA Canada Inc. (2022-2023)**: Lead the development of workflow processes and maintaining communications among various teams and companies working on condominium developments. Workflow processes required the knowledge of folder structures and scripting to automate the saving of legal documents and condominium files. Daily reporting was done to all stakeholder individuals/companies to make sure that everyone had the same details regarding projects. Continuous research was done to understand if the workflow processes implemented were suitable for the working circumstances and standards of clients or improvements were required.
+**Business Operations Assistant, MBRA Canada Inc. (2022-2023)**: Coordinated cross-functional collaboration for condominium development projects, fostering seamless communication among stakeholders and internal team. Orchestrated workflow processes, leveraging folder structures and scripting to automate archival of legal condominium documents and project progress. Ensured consistent project insights by facilitating daily stakeholder updates, promoting alignment across all involved entities. Proactively refined workflow strategies through ongoing research, tailoring approaches to align with client standards and internal team needs.
 
-**Quality Assurance Analyst, Nexolink Inc. (2021-2022)**: Researched and led a venture focused on allowing clients to scrape their own financial details with automated scripts. Successfully trained a team of five in the usage of Selenium IDE and Postman, resulting in 12% more bugs being caught earlier. Developed Selenium and Postman scripts for unit and integration testing of Foreign Exchange Payment Platform E2EFX.
+**Quality Assurance Analyst, Nexolink Inc. (2021-2022)**: Developed comprehensive unit and integrated testing suites with C#, Selenium and Postman for E2EFX, a Foreign Exchange Payment Platform. Initiated a client-focused project, allowing users to be able to automate the extraction of their financial data through Selenium IDE scripts. Trained a team of 5 with knowledge regarding quality assurance processes and data extraction application.
 
 
 ## Education
@@ -41,6 +41,6 @@ Project source code: [https://github.com/Jarvis-Consulting-Group/jarvis_data_eng
 
 
 ## Miscellaneous
-- I have been playing and training for badminton for over a decade for enjoyment, always looking to improve on how I play
-- I love reading about my next potential travel destination
-- Growing up with a Dad that loved building computers, I got into it as well and always look into the latest consumer computer technology and building custom PCs for friends and myself
+- Throughout my life, I have always been involved in badminton by training and playing in tournaments and managing my own badminton club with weekly sessions
+- Growing up with a love for computer hardware, I delve into the world of building custom PCs, constantly exploring the latest consumer tech to share with friends and family
+- I am always learning more about the world and creating an itinerary for my next trip
